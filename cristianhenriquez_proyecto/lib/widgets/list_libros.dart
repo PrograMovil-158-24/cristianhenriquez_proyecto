@@ -8,35 +8,10 @@ Widget listLibros() {
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         if (snapshot.hasData) {
           return ListView(
-            children:[
+            children: [
               Text(
-              '${libro.title} (${libro.year})',
-            ),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  showVillains = !showVillains;
-                });
-              },
-              child: Text(
-                'Villains:',
+                '${libro.title} (${libro.year})',
               ),
-            ),
-            if (showVillains)
-              SizedBox(height: 10.0),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: widget.book.villains.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(widget.book.villains[index].name),
-                    onTap: () {
-                      // Handle villain tap if needed
-                    },
-                  );
-                },
-              ),
-            ),
             ],
           );
         } else {
