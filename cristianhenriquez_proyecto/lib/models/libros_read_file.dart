@@ -1,12 +1,13 @@
 import 'dart:convert' as convert;
 
+import 'package:cristianhenriquez_proyecto/domain/libros.dart';
 import 'package:flutter/services.dart';
 
 class _LibrosReadFile {
   Future<List<Libros>> getLibros() async {
-    final _dataAssetBundle = await rootBundle.loadString('database/data.json');
-    List<dynamic> _LibrosListJson = convert.jsonDecode(_dataAssetBundle);
-    return _librosListJson.map((e) => Libros.fromJson(e)).toList();
+    final dataAssetBundle = await rootBundle.loadString('database/data.json');
+    List<dynamic> librosListJson = convert.jsonDecode(dataAssetBundle);
+    return librosListJson.map((e) => Libros.fromJson(e)).toList();
   }
 }
 
