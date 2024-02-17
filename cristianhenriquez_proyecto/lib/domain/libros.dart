@@ -1,21 +1,21 @@
 // To parse this JSON data, do
 //
-//     final welcome = welcomeFromJson(jsonString);
+//     final libros = librosFromJson(jsonString);
 
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
+Libros librosFromJson(String str) => Libros.fromJson(json.decode(str));
 
-String welcomeToJson(Welcome data) => json.encode(data.toJson());
+String librosToJson(Libros data) => json.encode(data.toJson());
 
-class Welcome {
+class Libros {
   List<Datum> data;
 
-  Welcome({
+  Libros({
     required this.data,
   });
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+  factory Libros.fromJson(Map<String, dynamic> json) => Libros(
         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
       );
 
