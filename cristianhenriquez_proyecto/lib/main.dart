@@ -11,8 +11,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Stephen King - Libros',
+      // routerConfig: router,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        useMaterial3: true,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
     );
